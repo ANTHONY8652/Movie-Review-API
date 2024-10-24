@@ -12,10 +12,4 @@ The **Movie Review API** allows users to create, read, update, and delete (CRUD)
 ## Technologies Used
 - **Django**: For the backend framework.
 - **Django REST Framework**: For API functionality.
-- **SQLite**: Default database for local development.
-- **PostgreSQL**: Optional for production.
-
-## Installation
-
-1. **Clone the repository**:
-   ```bash
+- **PostgreSQL**: Database for the reviews.
