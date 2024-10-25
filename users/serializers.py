@@ -8,11 +8,11 @@ class UserSerializer(serializers.ModelSerializer):
         fields = ['id', 'username', 'email', 'password']
         extra_kwargs = {'password': {'write_only': True}}
 
-        def create(self, validated_data):
-            user = User(**validated_data)
-            user.set_password(validated_data['password'])
-            user.save()
-            return user
+    def create(self, validated_data):
+        user = User(**validated_data)
+        user.set_password(validated_data['password'])
+        user.save()
+        return user
         
 class UserLoginSerializer(serializers.Serializer):
     email = serializers.EmailField()
@@ -26,7 +26,7 @@ class UserLoginSerializer(serializers.Serializer):
             user = authenticate(email=email, password=password)
 
             if not user:
-                raise serializers.ValidationError('Invalid email or password')
+                raise serializers.ValidationError('Invalid login credentials.')
         
         else:
             raise serializers.ValidationError("Must include 'email' and 'password'.")

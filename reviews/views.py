@@ -19,4 +19,7 @@ class ReviewDetailView(generics.RetrieveUpdateDestroyAPIView):
     def perform_update(self, serializer):
         serializer.save(user=self.request.user)
 
+    def get_queryset(self):
+        return self.queryset.filter(user=self.request.user)
+
 # Create your views here.
