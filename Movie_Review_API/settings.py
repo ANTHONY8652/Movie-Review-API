@@ -137,6 +137,9 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.TokenAuthentication',
         'rest_framework.authentication.SessionAuthentication',
     ],
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE': 10
 }
 
+TMDB_API_KEY = '66de4756644fa8f474e729c45d65910b'
 AUTH_USER_MODEL = 'users.User'
